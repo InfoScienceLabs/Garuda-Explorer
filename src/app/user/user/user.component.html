@@ -1,0 +1,106 @@
+<div class="well">
+   <dl class="horizontal">
+      <h5>Current Assets</h5>
+      <hr>
+      <dt>Owner Hash: </dt>
+      <dd><a routerLink="/users/{{data.userId}}">{{ data.userId || '-'}}</a></dd>
+      <hr>
+
+      <dt>Properties Hash List</dt>
+      <ng-container *ngIf="data.propIdList.length"> <br>
+         <dd>
+            <ul list-style-position="outside" class="input-output-list">
+               <li *ngFor="let propIdList of data.propIdList" class="ellipsis">
+                  <a routerLink="/properties/{{propIdList}}">{{ propIdList }}</a>
+               </li>
+            </ul>
+         </dd>
+      </ng-container>
+      <ng-container *ngIf="!data.propIdList.length">
+         <dd> User does not own any Properties right now</dd>
+      </ng-container>
+      <hr>
+
+      <dt>Certificates List</dt>
+      <dd>
+         <ng-container *ngIf="data.certList.length"> <br>
+            <ul list-style-position="outside" class="input-output-list">
+
+               <li *ngFor="let certList of data.certList" class="ellipsis">
+                  <a routerLink="/certificates/{{certList}}">{{ certList }}</a>
+               </li>
+            </ul>
+
+         </ng-container>
+      </dd>
+      <ng-container *ngIf="!data.certList.length">
+         <dd>User did not List any properties.</dd>
+      </ng-container>
+
+      <hr>
+
+      <dt>Contracts List</dt>
+      <ng-container *ngIf="data.contractList.length">
+         <dd>
+            <ul list-style-position="outside" class="input-output-list"> <br>
+               <li *ngFor="let contractList of data.contractList" class="ellipsis">
+                  <a routerLink="/contracts/{{contractList}}">{{ contractList }}</a><br />
+               </li>
+            </ul>
+         </dd>
+      </ng-container>
+      <ng-container *ngIf="!data.contractList.length">
+         <dd>User did not Transfer any properties.</dd>
+      </ng-container>
+      <hr>
+
+      <dt>List of Transactions</dt> <br>
+      <dd>
+         <ul list-style-position="outside" class="input-output-list">
+            <li *ngFor="let transIds of data.transIds" class="ellipsis">
+               <a routerLink="/transactions/{{transIds}}">{{ transIds || '-' }}</a><br />
+            </li>
+         </ul>
+      </dd>
+      <hr>
+   </dl>
+</div>
+
+<hr />
+
+<h3 class="h3">
+   Details of previous Assets
+</h3>
+
+<div class="well">
+   <dl class="horizontal">
+      <dt>Previous Assets</dt>
+      <ng-container *ngIf="data.prevProperties"> <br>
+         <dd>
+            <ul class="input-output-list">
+               <li *ngFor="let prevProperties of data.prevProperties" class="ellipsis">
+                  <a routerLink="/properties/{{ prevProperties }}">{{ prevProperties}}</a><br />
+               </li>
+            </ul>
+         </dd>
+      </ng-container>
+      <ng-container *ngIf="!data.prevProperties">
+         <dd>User does not have any Previous Assets.</dd>
+      </ng-container>
+      <br>
+      <dt>Previous Certificates</dt>
+      <ng-container *ngIf="data.prevCertList"> <br>
+         <dd>
+            <ul class="input-output-list">
+               <li *ngFor="let prevCertList of data.prevCertList" class="ellipsis">
+                  <a routerLink="/certificates/{{ prevCertList }}">{{ prevCertList }}</a><br />
+               </li>
+            </ul>
+         </dd>
+      </ng-container>
+      <ng-container *ngIf="!data.prevCertList">
+         <dd>User does not have any Previous Certificates</dd>
+      </ng-container>
+   </dl>
+</div>
+<hr>

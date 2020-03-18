@@ -1,0 +1,46 @@
+<div class="well">
+  <dl class="horizontal">
+    <hr>
+    <dt>Transaction Id: </dt>
+    <dd><a routerLink="/transactions/{{data.transactionId}}">{{ data.transactionId || '-'}}</a></dd>
+    <hr>
+
+    <dt>Type of Transaction: </dt>
+    <dd>{{ data.type || '-'}}</dd>
+    <hr>
+
+    <dt>Users involved: </dt> 
+    <ul class="input-output-list">
+      <li *ngFor="let owner of data.owner" class="ellipsis">
+        <a routerLink="/users/{{ owner }}">{{ owner }}</a><br />
+      </li>
+    </ul>
+    <hr>
+
+    <dt>Property Id:</dt>
+    <dd><a routerLink="/properties/{{data.propId}}">{{ data.propId || '-' }}</a></dd>
+    <hr>
+    
+    <dt>Certificate Id:</dt>
+    <ng-container *ngIf="data.certificate">
+    <dd><a routerLink="/certificates/{{ data.certificate }}">{{ data.certificate}}</a></dd>
+    </ng-container>
+    <ng-container *ngIf="!data.certificate">
+      <dd>Property not Listed yet</dd>
+      </ng-container>
+    <br />
+    <hr>
+
+    <dt>Contract Id:</dt>
+    <ng-container *ngIf="data.contract">
+    <dd><a routerLink="/contracts/{{ data.contract }}">{{ data.contract}}</a></dd>
+    </ng-container>
+    <ng-container *ngIf="!data.contract">
+      <dd>Property not transferred yet</dd>
+      </ng-container>
+    <br />
+    <hr>
+  </dl>
+</div>
+
+<hr />
