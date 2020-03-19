@@ -67,5 +67,5 @@ sure you are serving the app via `ng serve`.
 ## Contact Us
   Email:- info@infoscience.co
 ## License
-This project is licensed under the Apache License- see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the Apache License- see the [LICENSE](LICENSE) file for details
 
