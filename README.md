@@ -62,3 +62,10 @@ report will be generated in the `/coverage` directory. To view, open the
 Run `ng e2e` to execute the end-to-end tests via
 [Protractor](http://www.protractortest.org/). Before running the tests make
 sure you are serving the app via `ng serve`.
+
+
+## Contact Us
+  Email:- info@infoscience.co
+## License
+This project is licensed under the Apache License- see the [LICENSE.md](LICENSE.md) file for details
+
